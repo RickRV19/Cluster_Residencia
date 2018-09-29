@@ -2,13 +2,21 @@ import QtQuick 2.9
 import QtQuick.Window 2.2
 
 Window {
+
+    property alias datapool : datapool
+
     visible: true
-    width: 640
-    height: 480
+    width: 1200
+    height: 700
     title: qsTr("Cluster XXYY")
-    color: "lightblue"
+    color: "white"
 
     Dashboard {
-        anchors.left: parent.fill
+        width: 1200
+        height: 600
+    }
+
+    DataPool {
+        id: datapool
     }
 }
