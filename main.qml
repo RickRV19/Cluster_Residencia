@@ -10,12 +10,12 @@ Window {
     visible: true
     width: 1200
     height: 700
-    title: qsTr("Cluster XXYY")
+    title: qsTr("Cluster XXXX")
     color: "white"
 
     Dashboard {
         width: 1200
-        height: 600
+        height: 500
     }
 
     DataPool {
@@ -25,16 +25,30 @@ Window {
     Buttons {
         id: _gobutton
         x: 200
-        y: 605
+        y: 605 - 100
         buttonText.text: "Go!"
-        touch.onClicked: datapool.tachometerValue ++
+        touch.onClicked: datapool.tachometerValue ++ && datapool.speedometerValue ++
     }
 
     Buttons {
         id: _breakbutton
         x: 200
-        y: 660
+        y: 660 - 100
         buttonText.text: "Brake"
-        touch.onClicked: datapool.tachometerValue --
+        touch.onClicked: datapool.tachometerValue -- && datapool.speedometerValue --
+    }
+
+    Buttons {
+        x: 300
+        y: 660 - 100
+        buttonText.text: "Units"
+        touch.onClicked: datapool.units = !datapool.units
+    }
+
+    Buttons {
+        x: 300
+        y: 660 - 100
+        buttonText.text: "Units"
+        touch.onClicked: datapool.units = !datapool.units
     }
 }

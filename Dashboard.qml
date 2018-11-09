@@ -20,4 +20,17 @@ Item {
         anchors.top: parent.top
         anchors.topMargin: 60
     }
+
+    Speedometer {
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.horizontalCenterOffset: -90
+        anchors.verticalCenter: parent.verticalCenter
+        anchors.verticalCenterOffset: -150
+    }
+
+    Compass {
+        x: 200
+        y: 350
+    }
+
 }
