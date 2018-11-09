@@ -52,4 +52,11 @@ Item {
         height: 199
         scale: 0.3
     }
+
+    Shifter {
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.horizontalCenterOffset: -20
+        anchors.verticalCenter: parent.verticalCenter
+        anchors.verticalCenterOffset: 60
+    }
 }
