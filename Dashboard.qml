@@ -1,10 +1,12 @@
 import QtQuick 2.0
 
 Item {
+    visible: true
+    clip: false
 
-    Rectangle {
+    Image {
         anchors.fill: parent
-        color: "black"
+        source: "Images/background.jpeg"
     }
 
     Odometer {
@@ -29,8 +31,25 @@ Item {
     }
 
     Compass {
-        x: 200
+        x: 210
         y: 350
     }
 
+    Rectangle {
+        width: 800
+        height: 5
+        radius: 3
+        x: 200
+        y: 390
+        color: "black"
+    }
+
+    Image {
+        source: "Images/abs.png"
+        x: 872
+        y: 263
+        width: 174
+        height: 199
+        scale: 0.3
+    }
 }

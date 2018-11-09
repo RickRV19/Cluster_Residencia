@@ -9,8 +9,8 @@ Item {
 
     Text {
         anchors.fill: parent
-        font.pixelSize: 35
-        color: "gray"
+        font.pixelSize: 36
+        color: "black"
         text: compasDirections[datapool.compass]
     }
 }
