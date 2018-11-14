@@ -57,6 +57,11 @@ Item {
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.horizontalCenterOffset: -20
         anchors.verticalCenter: parent.verticalCenter
-        anchors.verticalCenterOffset: 60
+        anchors.verticalCenterOffset: 40
+    }
+
+    MusicBox {
+        x: 215
+        y: 90
     }
 }
