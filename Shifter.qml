@@ -16,4 +16,15 @@ Item {
             }
         }
     }
+
+    Rectangle {
+        x: 5
+        y: 50
+        width: 5
+        height: 20
+        radius: 5
+        color: "red"
+
+        Behavior on x { NumberAnimation { duration: 150 } }
+    }
 }
