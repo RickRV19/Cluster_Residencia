@@ -9,7 +9,7 @@ Rectangle {
 
     Text {
         anchors.centerIn: parent
-        text: datapool.odometerValue + " mi"
+        text: datapool.odometerValue.toFixed(1) + " km"
         color: "white"
         font.pixelSize: 30
     }

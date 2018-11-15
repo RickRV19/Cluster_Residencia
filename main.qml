@@ -29,6 +29,7 @@ Window {
         buttonText.text: "Go!"
         touch.onClicked: if(datapool.levelposition === datapool._Drive) {
                              (datapool.tachometerValue += 100) && (datapool.speedometerValue +=2)
+                             && (datapool.odometerValue += 0.2)
                              if(datapool.speedometerValue >= 140) {
                                  datapool.speedometerValue = 140
                              } if(datapool.tachometerValue >= 8000) {
