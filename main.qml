@@ -27,7 +27,14 @@ Window {
         x: 200
         y: 605 - 100
         buttonText.text: "Go!"
-        touch.onClicked: datapool.tachometerValue ++ && datapool.speedometerValue ++
+        touch.onClicked: if(datapool.levelposition === datapool._Drive) {
+                             (datapool.tachometerValue += 100) && (datapool.speedometerValue +=2)
+                             if(datapool.speedometerValue >= 140) {
+                                 datapool.speedometerValue = 140
+                             } if(datapool.tachometerValue >= 8000) {
+                                 datapool.tachometerValue = 8000
+                             }
+                         }
     }
 
     Buttons {
@@ -35,7 +42,14 @@ Window {
         x: 200
         y: 660 - 100
         buttonText.text: "Brake"
-        touch.onClicked: datapool.tachometerValue -- && datapool.speedometerValue --
+        touch.onClicked: if(datapool.levelposition !== datapool._Neutro) {
+                             (datapool.tachometerValue -= 100) && (datapool.speedometerValue -=2)
+                             if (datapool.speedometerValue < 0) {
+                                 datapool.speedometerValue = 0
+                             } if (datapool.tachometerValue < 1000) {
+                                 datapool.tachometerValue = 1000
+                             }
+                         }
     }
 
     Buttons {
