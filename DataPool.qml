@@ -8,6 +8,7 @@ Item {
     property bool units: true
     property int compass: enums._North
     property int levelposition: _Park
+    property bool alert
 
     //Shifter
     readonly property int _Park: 5

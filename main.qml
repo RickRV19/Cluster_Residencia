@@ -61,6 +61,19 @@ Window {
     }
 
     Buttons {
+        x: 300 + 500
+        y: 660 - 100
+        buttonText.text: "Alert"
+        touch.onClicked: (datapool.alert = !datapool.alert) && (_timerAlert.restart())
+    }
+
+    Timer {
+        id: _timerAlert
+        interval: 3000
+        onTriggered: datapool.alert = false
+    }
+
+    Buttons {
         x: 700
         y: 510
         buttonRectangle.width: 50
