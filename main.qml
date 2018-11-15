@@ -34,6 +34,10 @@ Window {
                                  datapool.speedometerValue = 140
                              } if(datapool.tachometerValue >= 8000) {
                                  datapool.tachometerValue = 8000
+                             } if(datapool.speedometerValue >= 120) {
+                                 (datapool.alert = true)
+                                 (datapool.alertBox = datapool._MaxSpeed)
+                                 (_timerAlert.restart())
                              }
                          }
     }

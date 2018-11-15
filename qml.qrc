@@ -17,5 +17,6 @@
         <file>Alert.qml</file>
         <file>Images/alert.png</file>
         <file>Images/alert.jpg</file>
+        <file>Images/maxspeed.png</file>
     </qresource>
 </RCC>

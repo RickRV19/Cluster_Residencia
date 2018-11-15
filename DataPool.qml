@@ -9,6 +9,10 @@ Item {
     property int compass: enums._North
     property int levelposition: _Park
     property bool alert
+    property int alertBox: _Warning
+
+    readonly property int _Warning: 1
+    readonly property int _MaxSpeed: 2
 
     //Shifter
     readonly property int _Park: 5

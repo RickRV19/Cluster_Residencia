@@ -29,5 +29,33 @@ Item {
             source: "Images/alert.png"
             scale: 0.1
         }
+        visible: datapool.alertBox === datapool._Warning
+    }
+
+    Rectangle {
+        width: base.width
+        height: base.height
+        anchors.centerIn: parent
+        radius: 10
+        color: "gray"
+        z: 12
+
+        Text {
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.verticalCenter: parent.verticalCenter
+            anchors.verticalCenterOffset: 90
+            text: "Max Speed Reached!"
+            color: "black"
+            font.pixelSize: 30
+        }
+
+        Image {
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.verticalCenter: parent.verticalCenter
+            anchors.verticalCenterOffset: -25
+            source: "Images/maxspeed.png"
+            scale: 0.2
+        }
+        visible: datapool.alertBox === datapool._MaxSpeed
     }
 }
