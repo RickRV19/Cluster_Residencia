@@ -34,6 +34,10 @@ Window {
                                  datapool.speedometerValue = 140
                              } if(datapool.tachometerValue >= 8000) {
                                  datapool.tachometerValue = 8000
+                             } if(datapool.speedometerValue >= 120) {
+                                 (datapool.alert = true)
+                                 (datapool.alertBox = datapool._MaxSpeed)
+                                 (_timerAlert.restart())
                              }
                          }
     }
@@ -58,6 +62,19 @@ Window {
         y: 660 - 100
         buttonText.text: "Units"
         touch.onClicked: datapool.units = !datapool.units
+    }
+
+    Buttons {
+        x: 300 + 500
+        y: 660 - 100
+        buttonText.text: "Alert"
+        touch.onClicked: (datapool.alert = !datapool.alert) && (_timerAlert.restart())
+    }
+
+    Timer {
+        id: _timerAlert
+        interval: 3000
+        onTriggered: datapool.alert = false
     }
 
     Buttons {

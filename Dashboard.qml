@@ -64,4 +64,12 @@ Item {
         x: 215
         y: 90
     }
+
+    Alert {
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.horizontalCenterOffset: 17
+        anchors.verticalCenter: parent.verticalCenter
+        anchors.verticalCenterOffset: -120
+        visible: datapool.alert
+    }
 }
