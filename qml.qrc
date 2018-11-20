@@ -2,5 +2,10 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>Dashboard.qml</file>
+        <file>Odometer.qml</file>
+        <file>DataPool.qml</file>
+        <file>Tachometer.qml</file>
+        <file>Logic.qml</file>
+        <file>Buttons.qml</file>
     </qresource>
 </RCC>
