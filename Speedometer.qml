@@ -6,7 +6,7 @@ Item {
         width: 200
         height: 150
         color: "transparent"
-        border.color: "white"
+        border.color: "black"
         border.width: 3
         radius: 5
 
@@ -14,7 +14,7 @@ Item {
             y: 10
             anchors.horizontalCenter: parent.horizontalCenter
             font.pixelSize: 50
-            color: "white"
+            color: "black"
             text: datapool.speedometerValue.toFixed(0)
 
             Text {
@@ -22,7 +22,7 @@ Item {
                 anchors.top: parent.bottom
                 anchors.topMargin: 10
                 font.pixelSize: 30
-                color: "white"
+                color: "black"
                 text: datapool.units ? "km/h" : "mph"
             }
         }

@@ -46,9 +46,47 @@ Window {
     }
 
     Buttons {
-        x: 300
-        y: 660 - 100
-        buttonText.text: "Units"
-        touch.onClicked: datapool.units = !datapool.units
+        x: 700
+        y: 510
+        buttonRectangle.width: 50
+        buttonRectangle.height: 25
+        buttonText.text: "P"
+        touch.onClicked: datapool.levelposition = datapool._Park
+    }
+
+    Buttons {
+        x: 700
+        y: 540
+        buttonRectangle.width: 50
+        buttonRectangle.height: 25
+        buttonText.text: "R"
+        touch.onClicked: datapool.levelposition = datapool._Reverse
+    }
+
+    Buttons {
+        x: 700
+        y: 570
+        buttonRectangle.width: 50
+        buttonRectangle.height: 25
+        buttonText.text: "N"
+        touch.onClicked: datapool.levelposition = datapool._Neutro
+    }
+
+    Buttons {
+        x: 700
+        y: 600
+        buttonRectangle.width: 50
+        buttonRectangle.height: 25
+        buttonText.text: "D"
+        touch.onClicked: datapool.levelposition = datapool._Drive
+    }
+
+    Buttons {
+        x: 700
+        y: 630
+        buttonRectangle.width: 50
+        buttonRectangle.height: 25
+        buttonText.text: "S"
+        touch.onClicked: datapool.levelposition = datapool._Sport
     }
 }
