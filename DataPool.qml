@@ -7,7 +7,7 @@ Item {
     property double speedometerValue: 0
     property bool units: true
     property int compass: enums._North
-    property int levelposition: enums._Park
+    property int levelposition: _Park
 
     //Shifter
     readonly property int _Park: 5

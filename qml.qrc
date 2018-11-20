@@ -7,5 +7,12 @@
         <file>Tachometer.qml</file>
         <file>Logic.qml</file>
         <file>Buttons.qml</file>
+        <file>Images/abs.png</file>
+        <file>Images/background.jpeg</file>
+        <file>Images/Music.png</file>
+        <file>Compass.qml</file>
+        <file>MusicBox.qml</file>
+        <file>Shifter.qml</file>
+        <file>Speedometer.qml</file>
     </qresource>
 </RCC>
