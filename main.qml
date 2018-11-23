@@ -69,6 +69,7 @@ Window {
         y: 660 - 100
         buttonText.text: "Alert"
         touch.onClicked: (datapool.alert = !datapool.alert) && (_timerAlert.restart())
+                         && (datapool.alertBox = datapool._Warning)
     }
 
     Timer {
