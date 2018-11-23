@@ -24,5 +24,8 @@
         <file>Images/temp.png</file>
         <file>Images/FuelLow.png</file>
         <file>Images/TempHigh.png</file>
+        <file>CheckEngine.qml</file>
+        <file>Images/rtt.png</file>
+        <file>Images/console.png</file>
     </qresource>
 </RCC>
