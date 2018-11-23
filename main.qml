@@ -22,6 +22,12 @@ Window {
         id: _datapool
     }
 
+    Timer {
+        id: speedPlus
+        interval: 20
+        onTriggered: { (datapool.tachometerValue += 100) && (datapool.speedometerValue +=2) }
+    }
+
     Buttons {
         id: _gobutton
         x: 200
@@ -29,15 +35,15 @@ Window {
         buttonText.text: "Go!"
         touch.onClicked: if(datapool.levelposition === datapool._Drive) {
                              (datapool.tachometerValue += 100) && (datapool.speedometerValue +=2)
-                             && (datapool.odometerValue += 0.2)
+                                     && (datapool.odometerValue += 0.2)
                              if(datapool.speedometerValue >= 140) {
                                  datapool.speedometerValue = 140
                              } if(datapool.tachometerValue >= 8000) {
                                  datapool.tachometerValue = 8000
-                             } if(datapool.speedometerValue >= 120) {
+                             } if(datapool.speedometerValue >= 140) {
                                  (datapool.alert = true)
-                                 (datapool.alertBox = datapool._MaxSpeed)
-                                 (_timerAlert.restart())
+                                         (datapool.alertBox = datapool._MaxSpeed)
+                                         (_timerAlert.restart())
                              }
                          }
     }
@@ -68,8 +74,8 @@ Window {
         x: 300 + 500
         y: 660 - 100
         buttonText.text: "Alert"
-        touch.onClicked: (datapool.alert = !datapool.alert) && (_timerAlert.restart())
-                         && (datapool.alertBox = datapool._Warning)
+        touch.onClicked: { (datapool.alert = !datapool.alert) && (_timerAlert.restart())
+                         && (datapool.alertBox = datapool._Warning) }
     }
 
     Timer {
@@ -121,5 +127,69 @@ Window {
         buttonRectangle.height: 25
         buttonText.text: "S"
         touch.onClicked: datapool.levelposition = datapool._Sport
+    }
+
+    Buttons {
+        x: 850 + 50
+        y: 550
+        buttonRectangle.width: 60
+        buttonRectangle.height: 25
+        buttonText.text: "Fuel Plus"
+        touch.onClicked: if(datapool.onModel === true) {
+                             datapool.fuelPlus ++
+                                 if (datapool.fuelPlus >= 150) {
+                                     datapool.fuelPlus = 150
+                                 }
+                         }
+    }
+
+    Buttons {
+        x: 850 + 50
+        y: 530 + 50
+        buttonRectangle.width: 60
+        buttonRectangle.height: 25
+        buttonText.text: "Fuel Minus"
+        touch.onClicked: if(datapool.onModel === true) {
+                             datapool.fuelPlus --
+                             if (datapool.fuelPlus < 34) {
+                                 datapool.fuelPlus = 34
+                             } if(datapool.fuelPlus <= 34) {
+                                 (datapool.alert = true)
+                                         (datapool.alertBox = datapool._FuelLow)
+                                         (_timerAlert.restart())
+                             }
+                         }
+    }
+
+    Buttons {
+        x: 850 + 50 + 70
+        y: 550
+        buttonRectangle.width: 60
+        buttonRectangle.height: 25
+        buttonText.text: "Temp Plus"
+        touch.onClicked: if(datapool.onModel === true) {
+                             datapool.tempPlus ++
+                                 if (datapool.tempPlus >= 150) {
+                                     datapool.tempPlus = 150
+                                 } if (datapool.tempPlus > 120) {
+                                     (datapool.alert = true)
+                                             (datapool.alertBox = datapool._TempHigh)
+                                             (_timerAlert.restart())
+                                 }
+                         }
+    }
+
+    Buttons {
+        x: 850 + 50 + 70
+        y: 530 + 50
+        buttonRectangle.width: 60
+        buttonRectangle.height: 25
+        buttonText.text: "Temp Minus"
+        touch.onClicked: if(datapool.onModel === true) {
+                             datapool.tempPlus --
+                             if (datapool.tempPlus < 34) {
+                                 datapool.tempPlus = 34
+                             }
+                         }
     }
 }

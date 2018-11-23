@@ -33,24 +33,24 @@ Item {
         anchors.bottom: _rect.bottom
         anchors.bottomMargin: 0
         width: 50
-        height: datapool.fuelPlus
-        color: if(datapool.fuelPlus < 37) {
+        height: datapool.tempPlus
+        color: if(datapool.tempPlus < 37) {
+                   "lightblue"
+               } else if (datapool.tempPlus >= 38 && datapool.tempPlus <= 119) {
+                   "lightblue"
+               } else if (datapool.tempPlus > 120) {
                    "red"
-               } else if (datapool.fuelPlus >= 38 && datapool.fuelPlus <= 55) {
-                   "yellow"
-               } else if (datapool.fuelPlus > 55) {
-                   "green"
                }
         radius: 10
     }
 
     Image {
         anchors.top: _item.bottom
-        anchors.topMargin: -330
+        anchors.topMargin: -230
         anchors.left: _item.left
-        anchors.leftMargin: -240
-        source: "Images/fuel.png"
-        scale: 0.05
+        anchors.leftMargin: -230
+        source: "Images/temp.png"
+        scale: 0.08
     }
 }
 
