@@ -209,4 +209,12 @@ Window {
 
                          }
     }
+
+    Window {
+        width: 300
+        height: 300
+        color: "white"
+        title: qsTr("References")
+        visible: true
+    }
 }

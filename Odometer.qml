@@ -9,7 +9,8 @@ Rectangle {
 
     Text {
         anchors.centerIn: parent
-        text: datapool.odometerValue.toFixed(1) + " km"
+        text:  datapool.units ? datapool.odometerValue.toFixed(1) + " km"
+                              : (datapool.odometerValue / (1.6)).toFixed(1) + " mi"
         color: "white"
         font.pixelSize: 30
     }

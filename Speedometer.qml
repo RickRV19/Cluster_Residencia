@@ -15,8 +15,7 @@ Item {
             anchors.horizontalCenter: parent.horizontalCenter
             font.pixelSize: 50
             color: "black"
-            text: datapool.units ?
-                      datapool.speedometerValue.toFixed(0) : (datapool.speedometerValue)(1.6)
+            text: datapool.units ? datapool.speedometerValue : ((datapool.speedometerValue) / (1.6)).toFixed(0)
 
             Text {
                 anchors.horizontalCenter: parent.horizontalCenter
