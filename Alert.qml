@@ -11,7 +11,6 @@ Item {
         anchors.centerIn: parent
         radius: 10
         color: "yellow"
-        z: 12
 
         Text {
             anchors.horizontalCenter: parent.horizontalCenter
@@ -38,7 +37,6 @@ Item {
         anchors.centerIn: parent
         radius: 10
         color: "gray"
-        z: 12
 
         Text {
             anchors.horizontalCenter: parent.horizontalCenter
@@ -65,7 +63,6 @@ Item {
         anchors.centerIn: parent
         radius: 10
         color: "red"
-        z: 12
 
         Text {
             anchors.horizontalCenter: parent.horizontalCenter
@@ -92,7 +89,6 @@ Item {
         anchors.centerIn: parent
         radius: 10
         color: "red"
-        z: 12
 
         Text {
             anchors.horizontalCenter: parent.horizontalCenter
@@ -119,7 +115,6 @@ Item {
         anchors.centerIn: parent
         radius: 10
         color: "lightgray"
-        z: 12
 
         Text {
             anchors.horizontalCenter: parent.horizontalCenter
@@ -138,5 +133,31 @@ Item {
             scale: 0.2
         }
         visible: datapool.alertBox === datapool._Rtt
+    }
+
+    Rectangle {
+        width: base.width
+        height: base.height
+        anchors.centerIn: parent
+        radius: 10
+        color: "brown"
+
+        Text {
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.verticalCenter: parent.verticalCenter
+            anchors.verticalCenterOffset: 45
+            text: "Uploading Suspension \n Please Check Manual"
+            color: "black"
+            font.pixelSize: 30
+        }
+
+        Image {
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.verticalCenter: parent.verticalCenter
+            anchors.verticalCenterOffset: -40
+            source: "Images/suspension.png"
+            scale: 0.2
+        }
+        visible: datapool.alertBox === datapool._RockActivated
     }
 }

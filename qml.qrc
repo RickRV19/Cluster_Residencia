@@ -27,5 +27,10 @@
         <file>CheckEngine.qml</file>
         <file>Images/rtt.png</file>
         <file>Images/console.png</file>
+        <file>Images/rock.jpg</file>
+        <file>Images/asphalt.jpg</file>
+        <file>Images/background.jpg</file>
+        <file>Images/suspension.png</file>
+        <file>Images/4x4.png</file>
     </qresource>
 </RCC>

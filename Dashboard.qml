@@ -6,7 +6,11 @@ Item {
 
     Image {
         anchors.fill: parent
-        source: "Images/background.jpeg"
+        source: if (datapool.mode === datapool._Normal) {
+                    "Images/background.jpg"
+                } else if (datapool.mode === datapool._Rock) {
+                    "Images/rock.jpg"
+                }
     }
 
     Odometer {
@@ -86,5 +90,15 @@ Item {
     CheckEngine {
         x: 250
         y: 180
+    }
+
+    Image {
+        source: "Images/4x4.png"
+        x: 800
+        y: 263
+        width: 174
+        height: 199
+        scale: 0.3
+        visible: datapool.mode === datapool._Rock
     }
 }

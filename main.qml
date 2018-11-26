@@ -210,6 +210,31 @@ Window {
                          }
     }
 
+    Buttons {
+        x: 600
+        y: 510
+        buttonRectangle.width: 75
+        buttonRectangle.height: 25
+        buttonText.text: "Normal"
+        touch.onClicked: datapool.mode = datapool._Normal
+    }
+
+    Buttons {
+        x: 600
+        y: 550
+        buttonRectangle.width: 75
+        buttonRectangle.height: 25
+        buttonText.text: "Rock"
+        touch.onClicked: if(datapool.onModel === true) {
+                             (datapool.mode = datapool._Rock)
+                             if (datapool.mode === datapool._Rock) {
+                                 (datapool.alert = true)
+                                         (datapool.alertBox = datapool._RockActivated)
+                                         (_timerAlert.restart())
+                             }
+                         }
+    }
+
     Window {
         width: 300
         height: 300
