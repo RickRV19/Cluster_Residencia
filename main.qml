@@ -241,5 +241,22 @@ Window {
         color: "white"
         title: qsTr("References")
         visible: true
+
+        Text {
+            id: _text
+            text: "Odometer: "
+            font.pixelSize: 30
+            anchors.left: parent.left
+            anchors.leftMargin: 10
+            anchors.top: parent.top
+            anchors.topMargin: 20
+            color: "green"
+        }
+
+        TextField {
+            anchors.left: _text.right
+            anchors.bottom: _text.bottom
+            placeholderText: datapool.odometerValue
+        }
     }
 }
