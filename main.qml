@@ -1,6 +1,7 @@
 import QtQuick 2.9
 import QtQuick.Window 2.2
 import QtQuick.Controls 1.4
+import Firmata 1.0
 
 Window {
 
@@ -12,6 +13,16 @@ Window {
     height: 700
     title: qsTr("Cluster XXXX")
     color: "white"
+
+    //ARDUINO CONNECTION
+    Firmata {
+        backend: SerialFirmata { device: "COM4" }
+        DigitalPin {
+            output: true
+            pin: 12
+            value: datapool.alert
+        }
+    }
 
     Dashboard {
         width: 1200
