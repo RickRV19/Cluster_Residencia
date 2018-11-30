@@ -22,6 +22,11 @@ Window {
             pin: 12
             value: datapool.alert
         }
+        DigitalPin {
+            output: true
+            pin: 8
+            value: datapool.levelposition === datapool._Drive
+        }
     }
 
     Dashboard {
