@@ -32,5 +32,6 @@
         <file>Images/background.jpg</file>
         <file>Images/suspension.png</file>
         <file>Images/4x4.png</file>
+        <file>Images/maintenance.png</file>
     </qresource>
 </RCC>

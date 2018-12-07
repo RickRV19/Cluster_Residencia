@@ -1,6 +1,7 @@
 import QtQuick 2.9
 import QtQuick.Window 2.2
 import QtQuick.Controls 1.4
+import Firmata 1.0
 
 Window {
 
@@ -12,6 +13,21 @@ Window {
     height: 700
     title: qsTr("Cluster XXXX")
     color: "white"
+
+    //ARDUINO CONNECTION
+    Firmata {
+        backend: SerialFirmata { device: "COM4" }
+        DigitalPin {
+            output: true
+            pin: 12
+            value: datapool.alert
+        }
+        DigitalPin {
+            output: true
+            pin: 8
+            value: datapool.levelposition === datapool._Drive
+        }
+    }
 
     Dashboard {
         width: 1200
@@ -206,7 +222,6 @@ Window {
                                          (datapool.alertBox = datapool._Rtt)
                                          (_timerAlert.restart())
                              }
-
                          }
     }
 
@@ -257,6 +272,14 @@ Window {
             anchors.left: _text.right
             anchors.bottom: _text.bottom
             placeholderText: datapool.odometerValue
+            onAccepted: {
+                datapool.odometerValue = text
+                if(datapool.odometerValue === 1000) {
+                    (datapool.alert = true)
+                            (datapool.alertBox = datapool._Maintenance)
+                            (_timerAlert.restart())
+                }
+            }
         }
     }
 }
