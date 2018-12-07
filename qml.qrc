@@ -18,5 +18,6 @@
         <file>Images/alert.png</file>
         <file>Images/alert.jpg</file>
         <file>Images/maxspeed.png</file>
+        <file>FuelGauge.qml</file>
     </qresource>
 </RCC>
