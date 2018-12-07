@@ -209,4 +209,54 @@ Window {
 
                          }
     }
+
+    Buttons {
+        x: 600
+        y: 510
+        buttonRectangle.width: 75
+        buttonRectangle.height: 25
+        buttonText.text: "Normal"
+        touch.onClicked: datapool.mode = datapool._Normal
+    }
+
+    Buttons {
+        x: 600
+        y: 550
+        buttonRectangle.width: 75
+        buttonRectangle.height: 25
+        buttonText.text: "Rock"
+        touch.onClicked: if(datapool.onModel === true) {
+                             (datapool.mode = datapool._Rock)
+                             if (datapool.mode === datapool._Rock) {
+                                 (datapool.alert = true)
+                                         (datapool.alertBox = datapool._RockActivated)
+                                         (_timerAlert.restart())
+                             }
+                         }
+    }
+
+    Window {
+        width: 300
+        height: 300
+        color: "white"
+        title: qsTr("References")
+        visible: true
+
+        Text {
+            id: _text
+            text: "Odometer: "
+            font.pixelSize: 30
+            anchors.left: parent.left
+            anchors.leftMargin: 10
+            anchors.top: parent.top
+            anchors.topMargin: 20
+            color: "green"
+        }
+
+        TextField {
+            anchors.left: _text.right
+            anchors.bottom: _text.bottom
+            placeholderText: datapool.odometerValue
+        }
+    }
 }
