@@ -112,4 +112,31 @@ Item {
         }
         visible: datapool.alertBox === datapool._TempHigh
     }
+
+    Rectangle {
+        width: base.width
+        height: base.height
+        anchors.centerIn: parent
+        radius: 10
+        color: "lightgray"
+        z: 12
+
+        Text {
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.verticalCenter: parent.verticalCenter
+            anchors.verticalCenterOffset: 50
+            text: "Sending data to console"
+            color: "black"
+            font.pixelSize: 30
+        }
+
+        Image {
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.verticalCenter: parent.verticalCenter
+            anchors.verticalCenterOffset: -25
+            source: "Images/console.png"
+            scale: 0.2
+        }
+        visible: datapool.alertBox === datapool._Rtt
+    }
 }

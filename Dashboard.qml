@@ -82,4 +82,9 @@ Item {
         x: 1050
         y: 200
     }
+
+    CheckEngine {
+        x: 250
+        y: 180
+    }
 }

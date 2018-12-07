@@ -75,7 +75,7 @@ Window {
         y: 660 - 100
         buttonText.text: "Alert"
         touch.onClicked: { (datapool.alert = !datapool.alert) && (_timerAlert.restart())
-                         && (datapool.alertBox = datapool._Warning) }
+                           && (datapool.alertBox = datapool._Warning) }
     }
 
     Timer {
@@ -137,9 +137,9 @@ Window {
         buttonText.text: "Fuel Plus"
         touch.onClicked: if(datapool.onModel === true) {
                              datapool.fuelPlus ++
-                                 if (datapool.fuelPlus >= 150) {
-                                     datapool.fuelPlus = 150
-                                 }
+                             if (datapool.fuelPlus >= 150) {
+                                 datapool.fuelPlus = 150
+                             }
                          }
     }
 
@@ -169,13 +169,13 @@ Window {
         buttonText.text: "Temp Plus"
         touch.onClicked: if(datapool.onModel === true) {
                              datapool.tempPlus ++
-                                 if (datapool.tempPlus >= 150) {
-                                     datapool.tempPlus = 150
-                                 } if (datapool.tempPlus > 120) {
-                                     (datapool.alert = true)
-                                             (datapool.alertBox = datapool._TempHigh)
-                                             (_timerAlert.restart())
-                                 }
+                             if (datapool.tempPlus >= 150) {
+                                 datapool.tempPlus = 150
+                             } if (datapool.tempPlus > 120) {
+                                 (datapool.alert = true)
+                                         (datapool.alertBox = datapool._TempHigh)
+                                         (_timerAlert.restart())
+                             }
                          }
     }
 
@@ -190,6 +190,23 @@ Window {
                              if (datapool.tempPlus < 34) {
                                  datapool.tempPlus = 34
                              }
+                         }
+    }
+
+    Buttons {
+        x: 850 + 50 + 140
+        y: 530 + 50
+        buttonRectangle.width: 60
+        buttonRectangle.height: 25
+        buttonText.text: "RTT"
+        touch.onClicked: if(datapool.onModel === true) {
+                             datapool.rtt = !datapool.rtt
+                             if (datapool.rtt === true) {
+                                 (datapool.alert = true)
+                                         (datapool.alertBox = datapool._Rtt)
+                                         (_timerAlert.restart())
+                             }
+
                          }
     }
 }

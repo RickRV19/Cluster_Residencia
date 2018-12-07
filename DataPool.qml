@@ -13,11 +13,13 @@ Item {
     property int alertBox: _Warning
     property int fuelPlus: 70
     property int tempPlus: 50
+    property bool rtt
 
     readonly property int _Warning: 1
     readonly property int _MaxSpeed: 2
     readonly property int _FuelLow: 3
     readonly property int _TempHigh: 4
+    readonly property int _Rtt: 5
 
     //Shifter
     readonly property int _Park: 5
