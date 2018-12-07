@@ -27,6 +27,7 @@ Item {
     readonly property int _TempHigh: 4
     readonly property int _Rtt: 5
     readonly property int _RockActivated: 6
+    readonly property int _Maintenance: 7
 
     //Shifter
     readonly property int _Park: 5

@@ -222,7 +222,6 @@ Window {
                                          (datapool.alertBox = datapool._Rtt)
                                          (_timerAlert.restart())
                              }
-
                          }
     }
 
@@ -273,6 +272,14 @@ Window {
             anchors.left: _text.right
             anchors.bottom: _text.bottom
             placeholderText: datapool.odometerValue
+            onAccepted: {
+                datapool.odometerValue = text
+                if(datapool.odometerValue === 1000) {
+                    (datapool.alert = true)
+                            (datapool.alertBox = datapool._Maintenance)
+                            (_timerAlert.restart())
+                }
+            }
         }
     }
 }

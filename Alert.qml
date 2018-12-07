@@ -160,4 +160,30 @@ Item {
         }
         visible: datapool.alertBox === datapool._RockActivated
     }
+
+    Rectangle {
+        width: base.width
+        height: base.height
+        anchors.centerIn: parent
+        radius: 10
+        color: "yellow"
+
+        Text {
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.verticalCenter: parent.verticalCenter
+            anchors.verticalCenterOffset: 45
+            text: "Maintenance"
+            color: "black"
+            font.pixelSize: 30
+        }
+
+        Image {
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.verticalCenter: parent.verticalCenter
+            anchors.verticalCenterOffset: -40
+            source: "Images/maintenance.png"
+            scale: 0.2
+        }
+        visible: datapool.alertBox === datapool._Maintenance
+    }
 }
