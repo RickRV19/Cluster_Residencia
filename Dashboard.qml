@@ -72,4 +72,14 @@ Item {
         anchors.verticalCenterOffset: -120
         visible: datapool.alert
     }
+
+    FuelGauge {
+        x: 100
+        y: 200
+    }
+
+    TempGauge {
+        x: 1050
+        y: 200
+    }
 }
