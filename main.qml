@@ -253,8 +253,10 @@ Window {
     Window {
         width: 300
         height: 300
+        x: 1150
+        y: 300
         color: "white"
-        title: qsTr("References")
+        title: qsTr("Ventana de Información")
         visible: true
 
         Text {
@@ -274,7 +276,7 @@ Window {
             placeholderText: datapool.odometerValue
             onAccepted: {
                 datapool.odometerValue = text
-                if(datapool.odometerValue === 1000) {
+                if(datapool.odometerValue === 1000 || datapool.odometerValue === 2000) {
                     (datapool.alert = true)
                             (datapool.alertBox = datapool._Maintenance)
                             (_timerAlert.restart())
